@@ -41,8 +41,8 @@ crust = "#11111b"
 # You can also replace your username with a neat symbol like  to save some space
 [username]
 show_always = true
-style_user = "bold #8be9fd"
-style_root = "bold #8be9fd"
+style_user = "bold blue"
+style_root = "bold red"
 format = '[$user]($style)'
 
 [hostname]
@@ -52,10 +52,10 @@ format = "[$hostname](bg:#1C4961)"
 trim_at = ".lmv.lm.se"
 
 [directory]
-style = "fg:#50fa7b"
-format = "[$path]($style) "
-truncation_length = 3
-truncate_to_repo = true
+style = "green"
+#format = "[$path]($style) "
+truncation_length = 10000
+truncate_to_repo = false
 truncation_symbol = "…/"
 home_symbol = "~"
 
@@ -87,11 +87,11 @@ format = '[ $symbol \[$name\] ]($style)'
 [git_branch]
 symbol = ""
 format = "[on $symbol $branch ]($style)"
-style = "fg:#ff79c6"
+style = "fg:blue"
 
 [git_status]
 format = "[$all_status$ahead_behind]($style)"
-style = "fg:#ff5555"
+style = "fg:red"
 conflicted = "🏳"
 up_to_date = "✓ "
 untracked = " "
@@ -106,15 +106,15 @@ deleted = "✘ "
 
 [kubernetes]
 format = '[ $context\($namespace\)]($style)'
-style = "fg:#f1fa8c"
+style = "fg:green"
 disabled = false
 [kubernetes.context_aliases]
-".*/caas.lm.se:443/.*" = "ocp3prd"
-".*/caas-lab.lm.se:443/.*" = "ocp3lab"
-".*/api-caas4-lm-se:6443/.*" = "ocp4prd"
-".*/api-caas4-lab-lm-se:6443/.*" = "ocp4lab"
+".*/.*caas.lm.*/.*" = "ocp3prd"
+".*/.*caas-lab.lm.*/.*" = "ocp3lab"
+".*/.*caas4-lm.*/.*" = "ocp4prd"
+".*/.*caas4-lab-lm.*/.*" = "ocp4lab"
 
 [time]
 disabled = false
 format = "[$time ]($style)"
-style = "fg:#bd93f9"
+style = "fg:mauve"
